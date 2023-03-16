@@ -29,6 +29,10 @@ export const getSpotMetadata = (spotId: string) => {
   };
 };
 
+export const getSpotById = (spotId: string) => {
+  return spots.find(spot => spot.id === spotId);
+};
+
 export const spots: Spot[] = [
   {
     id: "a854713e-4ff8-4604-3530-3030-6d61-63-9cd2-d6318680e987d",
@@ -41,53 +45,43 @@ export const spots: Spot[] = [
     city: "Anglet",
   },
   {
-    id: "ce404f1a-edf3-405a-3537-3530-6d61-63-9b25-e5aeaf2c6ee5d",
-    name: "Plage des Sables d'Or",
-    city: "Anglet",
-  },
-  {
-    id: "a854713e-4ff8-4604-3530-3030-6d61-63-9cd2-d6318680e987d",
-    name: "Plage du Club",
-    city: "Anglet",
-  },
-  {
-    id: "efb28fcb-c77e-48f2-3730-3030-6d61-63-9ec0-d8ec4bba1bacd",
-    name: "Plage des Sables d'Or",
+    id: "8db1eb47-bf35-4cc5-3230-3030-6d61-63-a480-d5af1dc07ff9d",
+    name: "Plage du VVF",
     city: "Anglet",
   },
   {
     id: "ce404f1a-edf3-405a-3537-3530-6d61-63-9b25-e5aeaf2c6ee5d",
-    name: "Plage des Sables d'Or",
+    name: "Plage Marinella Sables d'Or",
     city: "Anglet",
   },
   {
-    id: "a854713e-4ff8-4604-3530-3030-6d61-63-9cd2-d6318680e987d",
-    name: "Plage du Club",
+    id: "c56ac32d-4df6-4924-3430-3030-6d61-63-9e97-d84cc86e129bd",
+    name: "Madrague, Océan, Dune",
     city: "Anglet",
   },
   {
-    id: "efb28fcb-c77e-48f2-3730-3030-6d61-63-9ec0-d8ec4bba1bacd",
-    name: "Plage des Sables d'Or",
+    id: "ab545616-6ccf-4fb1-3630-3030-6d61-63-8146-78fe2f208d2fd",
+    name: "Cavaliers",
     city: "Anglet",
   },
   {
-    id: "ce404f1a-edf3-405a-3537-3530-6d61-63-9b25-e5aeaf2c6ee5d",
-    name: "Plage des Sables d'Or",
+    id: "ae95b2a8-db24-4de1-3330-3030-6d61-63-941e-36b7314774f8d",
+    name: "La Barre",
     city: "Anglet",
   },
   {
-    id: "a854713e-4ff8-4604-3530-3030-6d61-63-9cd2-d6318680e987d",
-    name: "Plage du Club",
-    city: "Anglet",
+    id: "96bf2e26-4178-4318-3730-3130-6d61-63-a6a7-e0447a4596f0d",
+    name: "La Grande Plage",
+    city: "Biarritz",
   },
   {
-    id: "efb28fcb-c77e-48f2-3730-3030-6d61-63-9ec0-d8ec4bba1bacd",
-    name: "Plage des Sables d'Or",
-    city: "Anglet",
+    id: "4ec957fc-fea2-49f2-3530-3130-6d61-63-872c-0869d3d9cef1d",
+    name: "Côte des Basques",
+    city: "Biarritz",
   },
   {
-    id: "ce404f1a-edf3-405a-3537-3530-6d61-63-9b25-e5aeaf2c6ee5d",
-    name: "Plage des Sables d'Or",
-    city: "Anglet",
+    id: "36f2d43a-6345-4afd-3031-3130-6d61-63-8139-e6d142b8a4c3d",
+    name: "Plage du Centre",
+    city: "Bidart",
   },
 ];
