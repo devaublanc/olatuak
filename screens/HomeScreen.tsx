@@ -3,17 +3,20 @@ import { View } from "react-native";
 import { spots } from "../data/spot";
 
 import { SpotGrid } from "../ui/SpotGrid";
-import { useRouter } from "expo-router";
+
 import { useCallback } from "react";
 
-export default function Home() {
-  const route = useRouter();
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../navigation/RootStack";
 
+export type HomeScreenProps = NativeStackScreenProps<
+  RootStackParamList,
+  "Home"
+>;
+
+export function HomeScreen({ navigation }: HomeScreenProps) {
   const onPressItem = useCallback((spotId: string) => {
-    route.push({
-      pathname: "/modal",
-      params: { spotId },
-    });
+    navigation.navigate("SpotDetail", { spotId: spotId });
   }, []);
   return (
     <View
