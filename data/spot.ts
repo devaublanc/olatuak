@@ -29,8 +29,8 @@ export const getSpotMetadata = (spotId: string) => {
   };
 };
 
-export const getSpotById = (spotId: string) => {
-  return spots.find(spot => spot.id === spotId);
+export const getSpotById = (spotId: string): Spot => {
+  return spots.find(spot => spot.id === spotId) as Spot;
 };
 
 export const spots: Spot[] = [
@@ -70,7 +70,7 @@ export const spots: Spot[] = [
     city: "Anglet",
   },
   {
-    id: "96bf2e26-4178-4318-3730-3130-6d61-63-a6a7-e0447a4596f0d",
+    id: "ffd2c10a-e812-4729-3930-3130-6d61-63-a799-247bcd11ebafd",
     name: "La Grande Plage",
     city: "Biarritz",
   },
