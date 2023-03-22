@@ -42,13 +42,7 @@ export function Player() {
   }, []);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "flex-start",
-      }}
-    >
+    <>
       {!isPlaying && (
         <PlayerPlaceholder width={videoWidth} height={videoHeight} />
       )}
@@ -73,6 +67,6 @@ export function Player() {
           onPlaybackStatusUpdate={onPlayBackStatusUpdate}
         />
       </TouchableOpacity>
-    </View>
+    </>
   );
 }
