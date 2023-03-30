@@ -84,4 +84,14 @@ export const spots: Spot[] = [
     name: "Plage du Centre",
     city: "Bidart",
   },
+  {
+    id: "b84ab1dc-8e4c-4a48-3533-3430-6d61-63-b74f-f23b3ce413f7d",
+    name: "Sainte Barbe",
+    city: "Saint Jean de Luz",
+  },
+  {
+    id: "ba1349b6-56b2-4903-3336-3230-6d61-63-b376-97e35dff77f3d",
+    name: "Plage du casino et des jumeaux",
+    city: "Hendaye",
+  },
 ];

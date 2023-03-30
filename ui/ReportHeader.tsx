@@ -9,10 +9,10 @@ export function ReportHeader({}) {
         <Text style={{ fontWeight: "bold" }}>Houle (°)</Text>
       </Cell>
       <Cell style={{ justifyContent: "flex-start" }}>
-        <Text style={{ fontWeight: "bold" }}>Taille (m)</Text>
+        <Text style={{ fontWeight: "bold" }}>Houle (m)</Text>
       </Cell>
       <Cell style={{ justifyContent: "flex-start" }}>
-        <Text style={{ fontWeight: "bold" }}>Période (s)</Text>
+        <Text style={{ fontWeight: "bold" }}>Houle (s)</Text>
       </Cell>
     </View>
   );

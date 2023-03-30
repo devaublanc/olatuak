@@ -8,7 +8,6 @@ function App() {
   const [fontsLoaded] = useFonts({
     "PermanentMarker-Regular": require("./assets/fonts/CarterOne-Regular.ttf"),
   });
-  console.log({ fontsLoaded });
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
