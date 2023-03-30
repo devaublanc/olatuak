@@ -1,5 +1,6 @@
 export default {
   blue: {
+    400: "#2a2c37",
     500: "#181920",
   },
   primary: {
@@ -12,6 +13,7 @@ export default {
     500: "#ffffff",
   },
   grey: {
+    400: "#62636a",
     500: "#62636a",
   },
 };

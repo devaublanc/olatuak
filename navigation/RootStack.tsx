@@ -35,7 +35,8 @@ export function RootStack() {
           options={{
             title: "Olatuak",
             headerTitleStyle: {
-              fontWeight: "900",
+              fontFamily: "PermanentMarker-Regular",
+              fontSize: 25,
               color: colors.white[500],
             },
           }}

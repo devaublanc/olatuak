@@ -25,6 +25,7 @@ export function SpotItem({ spot, width, height, onPress }: SpotThumbnailProps) {
           height,
           borderRadius: 10,
           marginBottom: 8,
+          backgroundColor: colors.blue[400],
         }}
       />
       <Text

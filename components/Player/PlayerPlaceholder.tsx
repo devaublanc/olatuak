@@ -1,4 +1,5 @@
 import { ActivityIndicator, View } from "react-native";
+import colors from "../../theme/colors";
 
 export type VideoPlaceholderProps = {
   width: number;
@@ -10,7 +11,7 @@ export function PlayerPlaceholder({ width, height }: VideoPlaceholderProps) {
       style={{
         width,
         height,
-        backgroundColor: "black",
+        backgroundColor: colors.blue[400],
         justifyContent: "center",
         position: "absolute",
         top: 0,
