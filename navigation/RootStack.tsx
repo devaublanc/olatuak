@@ -33,7 +33,7 @@ export function RootStack() {
           name="Home"
           component={HomeScreen}
           options={{
-            title: "PirateSurf",
+            title: "Olatuak",
             headerTitleStyle: {
               fontWeight: "900",
               color: colors.white[500],

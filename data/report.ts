@@ -2,6 +2,8 @@ import dayjs from "dayjs";
 
 export type ReportItem = {
   time: string;
+  day: string;
+  hour: string;
   waveHeight: number;
   waveDirection: number;
   wavePeriod: number;
@@ -16,6 +18,8 @@ export const getReport = (): Report => {
   for (let i = 0; i < 168; i++) {
     report.push({
       time: dayjs(reportEntry.hourly.time[i]).format("ddd D H[h]"),
+      day: dayjs(reportEntry.hourly.time[i]).format("ddd D"),
+      hour: dayjs(reportEntry.hourly.time[i]).format("H[h]"),
       waveHeight: reportEntry.hourly.wave_height[i],
       waveDirection: reportEntry.hourly.wave_direction[i],
       windDirection: reportEntry.hourly.wind_wave_direction[i],
