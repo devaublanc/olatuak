@@ -14,7 +14,7 @@ export type SpotThumbnailProps = {
 
 export function SpotItem({ spot, width, height, onPress }: SpotThumbnailProps) {
   return (
-    <TouchableOpacity onPress={onPress} style={{ padding: 5 }}>
+    <TouchableOpacity onPress={onPress} style={{ padding: 8 }}>
       <Image
         cachePolicy={"none"}
         source={{
@@ -29,7 +29,11 @@ export function SpotItem({ spot, width, height, onPress }: SpotThumbnailProps) {
         }}
       />
       <Text
-        style={{ fontSize: 10, color: colors.white[500], fontWeight: "bold" }}
+        style={{
+          fontSize: 10,
+          color: colors.white[500],
+          fontWeight: "bold",
+        }}
       >
         {spot.name}
       </Text>

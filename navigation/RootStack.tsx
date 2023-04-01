@@ -1,54 +1,118 @@
 import * as React from "react";
-import { View, Text } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { HomeScreen } from "../screens/HomeScreen";
-import { SpotDetailScreen } from "../screens/SpotDetailScreen";
-import colors from "../theme/colors";
 
-export type RootStackParamList = {
-  Home: undefined;
+import { NavigationContainer } from "@react-navigation/native";
+import AntIcon from "@expo/vector-icons/AntDesign";
+import {
+  NativeStackNavigationOptions,
+  createNativeStackNavigator,
+} from "@react-navigation/native-stack";
+import { SpotListScreen } from "../screens/SpotListScreen";
+import { SpotDetailScreen } from "../screens/SpotDetailScreen";
+import {
+  BottomTabNavigationOptions,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
+import colors from "../theme/colors";
+import { SearchScreen } from "../screens/SearchScreen";
+
+export type SpotStackParamList = {
+  SpotList: undefined;
   SpotDetail: { spotId: string };
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+export type SearchStackParamList = {
+  Search: undefined;
+};
+
+export type RootTabParamList = {
+  Home: undefined;
+  Search: undefined;
+};
+
+const SpotStackNavigator = createNativeStackNavigator<SpotStackParamList>();
+const SearchStackNavigator = createNativeStackNavigator<SearchStackParamList>();
+const RootTabNavigator = createBottomTabNavigator<RootTabParamList>();
+
+const defaultStackNavigationOptions: NativeStackNavigationOptions = {
+  contentStyle: {
+    backgroundColor: colors.blue[500],
+  },
+  headerStyle: {
+    backgroundColor: colors.blue[500],
+  },
+  headerTitleStyle: {
+    color: colors.white[500],
+  },
+};
+
+const defaultTabNavigationOptions: BottomTabNavigationOptions = {
+  headerShown: false,
+  tabBarItemStyle: {
+    backgroundColor: colors.blue[500],
+  },
+  tabBarActiveTintColor: colors.primary[500],
+  tabBarInactiveTintColor: colors.grey[500],
+  tabBarStyle: {
+    borderTopWidth: 0,
+  },
+  tabBarShowLabel: false,
+};
+
+export function SpotStack() {
+  return (
+    <SpotStackNavigator.Navigator screenOptions={defaultStackNavigationOptions}>
+      <SpotStackNavigator.Screen
+        name="SpotList"
+        component={SpotListScreen}
+        options={{
+          title: "Olatuak",
+          headerTitleStyle: {
+            fontFamily: "PermanentMarker-Regular",
+            fontSize: 25,
+            color: colors.white[500],
+          },
+        }}
+      />
+      <SpotStackNavigator.Screen
+        name="SpotDetail"
+        component={SpotDetailScreen}
+        options={{
+          presentation: "modal",
+        }}
+      />
+    </SpotStackNavigator.Navigator>
+  );
+}
+
+export function SearchStack() {
+  return (
+    <SearchStackNavigator.Navigator
+      screenOptions={defaultStackNavigationOptions}
+    >
+      <SearchStackNavigator.Screen name="Search" component={SearchScreen} />
+    </SearchStackNavigator.Navigator>
+  );
+}
 
 export function RootStack() {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          contentStyle: {
-            backgroundColor: colors.blue[500],
-          },
-          headerStyle: {
-            backgroundColor: colors.blue[500],
-          },
-          headerTitleStyle: {
-            color: colors.white[500],
-          },
-        }}
-      >
-        <Stack.Screen
+      <RootTabNavigator.Navigator screenOptions={defaultTabNavigationOptions}>
+        <RootTabNavigator.Screen
           name="Home"
-          component={HomeScreen}
+          component={SpotStack}
           options={{
-            title: "Olatuak",
-            headerTitleStyle: {
-              fontFamily: "PermanentMarker-Regular",
-              fontSize: 25,
-              color: colors.white[500],
-            },
+            tabBarIcon: icon => <AntIcon name="home" {...icon} />,
           }}
         />
-        <Stack.Screen
-          name="SpotDetail"
-          component={SpotDetailScreen}
+        <RootTabNavigator.Screen
+          name="Search"
+          component={SearchStack}
           options={{
-            presentation: "modal",
+            tabBarIcon: icon => <AntIcon name="search1" {...icon} />,
           }}
         />
-      </Stack.Navigator>
+      </RootTabNavigator.Navigator>
     </NavigationContainer>
   );
 }

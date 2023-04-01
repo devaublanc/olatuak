@@ -7,14 +7,14 @@ import { SpotGrid } from "../ui/SpotGrid";
 import { useCallback, useEffect } from "react";
 
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../navigation/RootStack";
+import { SpotStackParamList } from "../navigation/RootStack";
 
-export type HomeScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  "Home"
+export type SpotListScreenProps = NativeStackScreenProps<
+  SpotStackParamList,
+  "SpotList"
 >;
 
-export function HomeScreen({ navigation }: HomeScreenProps) {
+export function SpotListScreen({ navigation }: SpotListScreenProps) {
   const onPressItem = useCallback((spotId: string) => {
     navigation.navigate("SpotDetail", { spotId: spotId });
   }, []);
