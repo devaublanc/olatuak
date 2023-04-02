@@ -17,6 +17,7 @@ export function Cell({
           paddingVertical: 4,
           alignSelf: "stretch",
           borderWidth: 0.5,
+          height: 32,
           borderStyle: "solid",
           flexDirection: "row",
           justifyContent: "center",
