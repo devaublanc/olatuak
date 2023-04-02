@@ -20,6 +20,7 @@ export function Report({ report }: ReportProps) {
       <ReportHeader />
       <FlatList
         horizontal
+        bounces={false}
         data={report}
         renderItem={({ item }) => <ReportItem {...item} />}
         keyExtractor={item => item.day + item.hour + item.waveHeight.toString()}
