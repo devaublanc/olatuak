@@ -2,13 +2,7 @@ import { View, StyleSheet } from "react-native";
 import { Cell } from "./Cell";
 import { Text } from "./Text";
 
-const labels = [
-  "Vagues (°)",
-  "Vagues (m)",
-  "Vagues (s)",
-  "Vent (°)",
-  "Vent (km/h)",
-];
+const labels = ["Vagues", "Période", "Vent", "Marée"];
 
 export function ReportHeader({}) {
   return (

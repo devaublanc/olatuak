@@ -18,24 +18,24 @@ export type Tides = Tide[];
 export async function getTide(start: string, end: string) {
   try {
     const response = await fetch(
-      `${TIDE_API_URL}?tMin=${encodeURIComponent(
-        start
-      )}&tMax=${encodeURIComponent(end)}&field=tide`
+      "https://webcritech.jrc.ec.europa.eu/SeaLevelsDb/api/Device/1694/Data?tMin=2023-04-03%2022%3A00%3A00&tMax=2023-04-04%2021%3A59%3A00&field=tide"
     );
+
     const data: TideApiResponse = await response.json();
 
     let currentHour = 0;
-    return data.reduce((acc: Tide[], item: TideItemResponse) => {
-      const hour = new Date(item.Date).getHours();
-      if (hour !== currentHour) {
-        currentHour = hour;
+    return data
+      .filter(item => {
+        return new Date(item.Date).getMinutes() === 0;
+      })
+      .reduce((acc: Tide[], item: TideItemResponse) => {
         acc.push({
-          date: item.Date,
+          date: new Date(item.Date).toISOString(),
           value: item.Value,
         });
-      }
-      return acc;
-    }, [] as Tide[]);
+        // }s
+        return acc;
+      }, [] as Tide[]);
   } catch (error) {
     console.error(error);
     return null;

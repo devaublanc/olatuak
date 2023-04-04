@@ -25,8 +25,8 @@ export type SearchStackParamList = {
 };
 
 export type RootTabParamList = {
-  Home: undefined;
-  Search: undefined;
+  SpotStack: undefined;
+  SearchStack: undefined;
 };
 
 const SpotStackNavigator = createNativeStackNavigator<SpotStackParamList>();
@@ -99,14 +99,14 @@ export function RootStack() {
     <NavigationContainer>
       <RootTabNavigator.Navigator screenOptions={defaultTabNavigationOptions}>
         <RootTabNavigator.Screen
-          name="Home"
+          name="SpotStack"
           component={SpotStack}
           options={{
             tabBarIcon: icon => <AntIcon name="home" {...icon} />,
           }}
         />
         <RootTabNavigator.Screen
-          name="Search"
+          name="SearchStack"
           component={SearchStack}
           options={{
             tabBarIcon: icon => <AntIcon name="search1" {...icon} />,

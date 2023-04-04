@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList, View, StyleSheet } from "react-native";
 import { Report as ReportType } from "../data/report";
 import { ReportItem } from "./ReportItem";
 import { ReportHeader } from "./ReportHeader";
@@ -9,14 +9,7 @@ export type ReportProps = {
 
 export function Report({ report }: ReportProps) {
   return (
-    <View
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        marginTop: 16,
-        alignItems: "flex-end",
-      }}
-    >
+    <View style={styles.container}>
       <ReportHeader />
       <FlatList
         horizontal
@@ -29,3 +22,12 @@ export function Report({ report }: ReportProps) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    marginTop: 16,
+    alignItems: "flex-end",
+  },
+});

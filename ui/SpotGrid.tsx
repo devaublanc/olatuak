@@ -1,10 +1,11 @@
-import { useCallback } from "react";
+import { ReactElement, useCallback } from "react";
 import { FlatList, Dimensions } from "react-native";
 import { Spot } from "../data/spot";
 import { SpotItem } from "./SpotItem";
 
 export type SpotGridProps = {
   spots: Spot[];
+  header: ReactElement | null;
   onPressItem: (spotId: string) => void;
 };
 
@@ -15,7 +16,7 @@ const paddingWrapper = 4;
 const itemWidth = screenWidth / numColumns - gap * 2 - paddingWrapper * 2;
 const itemHeight = (itemWidth * 214) / 380;
 
-export function SpotGrid({ spots, onPressItem }: SpotGridProps) {
+export function SpotGrid({ spots, onPressItem, header }: SpotGridProps) {
   const renderItem = useCallback(({ item }: { item: Spot }) => {
     return (
       <SpotItem
@@ -29,6 +30,7 @@ export function SpotGrid({ spots, onPressItem }: SpotGridProps) {
 
   return (
     <FlatList
+      ListHeaderComponent={header}
       style={{ padding: paddingWrapper }}
       data={spots}
       showsVerticalScrollIndicator={false}
