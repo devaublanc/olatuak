@@ -12,9 +12,12 @@
       "resizeMode": "contain",
       "backgroundColor": "#2a2c37"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bdevaublanc.olatuak"
     },
     "android": {
       "adaptiveIcon": {
@@ -24,6 +27,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c4c58d88-f165-44f8-9ee0-0cb5f0666486"
+      }
     }
   }
 }

@@ -8,7 +8,7 @@ import {
 
 import { useCallback, useRef, useState } from "react";
 import { useRoute } from "@react-navigation/native";
-import { Dimensions, TouchableOpacity, View } from "react-native";
+import { Dimensions, TouchableOpacity } from "react-native";
 
 import { getSpotM3u8 } from "../../data/spot";
 
