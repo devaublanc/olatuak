@@ -1,8 +1,9 @@
 import React, { useCallback } from "react";
-import { View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import { RootStack } from "./navigation/RootStack";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import colors from "./theme/colors";
 
 function App() {
   const [fontsLoaded] = useFonts({
@@ -18,9 +19,12 @@ function App() {
     return null;
   }
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: colors.blue[500] }}
+      onLayout={onLayoutRootView}
+    >
       <RootStack />
-    </View>
+    </SafeAreaView>
   );
 }
 
