@@ -1,9 +1,9 @@
 import { View, StyleSheet } from 'react-native';
 
 import { Cell } from './Cell';
-import { ReportMetric } from './ReportMetric';
-import { Text } from './Text';
-import colors from '../theme/colors';
+import colors from '../../theme/colors';
+import { ReportMetric } from '../ReportMetric/ReportMetric';
+import { Text } from '../Text/Text';
 export type ReportItemProps = {
   day: string;
   hour: string;

@@ -19,6 +19,7 @@ function App() {
   if (!fontsLoaded) {
     return null;
   }
+
   return (
     <SafeAreaView
       style={{ flex: 1, backgroundColor: colors.blue[500] }}

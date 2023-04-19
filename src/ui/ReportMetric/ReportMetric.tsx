@@ -1,7 +1,7 @@
 import { View, StyleSheet, ViewProps } from 'react-native';
 
-import { Arrow } from './Arrow';
-import { Text } from './Text';
+import { Arrow } from '../Arrow/Arrow';
+import { Text } from '../Text/Text';
 
 export type ReportMetricProps = {
   value: string | number;

@@ -6,7 +6,7 @@ import { Player } from '../components/Player/Player';
 import { getSpotById } from '../data/spot';
 import { useReport } from '../hooks/useReport';
 import { SpotStackParamList } from '../navigation/RootStack';
-import { Report } from '../ui/Report';
+import { Report } from '../ui/Report/Report';
 
 export type SpotDetailScreenProps = NativeStackScreenProps<SpotStackParamList, 'SpotDetail'>;
 export function SpotDetailScreen({ navigation, route }: SpotDetailScreenProps) {

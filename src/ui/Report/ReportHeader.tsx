@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 
 import { Cell } from './Cell';
-import { Text } from './Text';
+import { Text } from '../Text/Text';
 
 const labels = ['Vagues', 'Période', 'Vent', 'Marée'];
 

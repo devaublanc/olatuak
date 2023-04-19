@@ -1,9 +1,9 @@
 import { Image } from 'expo-image';
 import { TouchableOpacity } from 'react-native';
 
-import { Text } from './Text';
-import { getSpotThumbnail, Spot } from '../data/spot';
-import colors from '../theme/colors';
+import { getSpotThumbnail, Spot } from '../../data/spot';
+import colors from '../../theme/colors';
+import { Text } from '../Text/Text';
 
 export type SpotThumbnailProps = {
   spot: Spot;

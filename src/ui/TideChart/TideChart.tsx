@@ -3,8 +3,8 @@ import React from 'react';
 import { Dimensions, ScrollView } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 
-import { Tides } from '../data/tide';
-import colors from '../theme/colors';
+import { Tides } from '../../data/tide';
+import colors from '../../theme/colors';
 
 export const TideChart = ({ tides }: { tides: Tides }) => {
   return (

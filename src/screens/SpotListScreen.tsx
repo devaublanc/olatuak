@@ -4,9 +4,9 @@ import { useCallback } from 'react';
 import { spots } from '../data/spot';
 import { useTide } from '../hooks/useTide';
 import { SpotStackParamList } from '../navigation/RootStack';
-import { ReportPreview } from '../ui/ReportPreview';
-import { SpotGrid } from '../ui/SpotGrid';
-import { TideChart } from '../ui/Tide';
+import { ReportPreview } from '../ui/ReportPreview/ReportPreview';
+import { SpotGrid } from '../ui/SpotGrid/SpotGrid';
+import { TideChart } from '../ui/TideChart/TideChart';
 
 export type SpotListScreenProps = NativeStackScreenProps<SpotStackParamList, 'SpotList'>;
 

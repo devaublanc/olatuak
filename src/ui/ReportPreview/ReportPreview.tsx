@@ -1,9 +1,9 @@
 import { View, StyleSheet } from 'react-native';
 
-import Rating from './Rating';
-import { ReportMetric } from './ReportMetric';
-import colors from '../theme/colors';
-import { Text } from './Text';
+import colors from '../../theme/colors';
+import Rating from '../Rating/Rating';
+import { ReportMetric } from '../ReportMetric/ReportMetric';
+import { Text } from '../Text/Text';
 
 export function ReportPreview() {
   return (
