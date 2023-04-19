@@ -3,8 +3,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback } from 'react';
 import { SafeAreaView } from 'react-native';
 
-import { RootStack } from './navigation/RootStack';
-import colors from './theme/colors';
+import { RootStack } from './src/navigation/RootStack';
+import colors from './src/theme/colors';
 
 function App() {
   const [fontsLoaded] = useFonts({

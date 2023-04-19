@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Rating from './Rating';
 import { ReportMetric } from './ReportMetric';
 import colors from '../theme/colors';
-import { Text } from '../ui/Text';
+import { Text } from './Text';
 
 export function ReportPreview() {
   return (
