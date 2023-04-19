@@ -1,6 +1,7 @@
-import { View, StyleSheet, ViewProps } from "react-native";
-import { Arrow } from "./Arrow";
-import { Text } from "./Text";
+import { View, StyleSheet, ViewProps } from 'react-native';
+
+import { Arrow } from './Arrow';
+import { Text } from './Text';
 
 export type ReportMetricProps = {
   value: string | number;
@@ -25,17 +26,15 @@ export const ReportMetric = ({
         {value}
         <Text style={{ fontSize: fontSizeLabel / 1.5 }}>{unit}</Text>
       </Text>
-      {direction !== undefined && (
-        <Arrow color={color} direction={direction} size={arrowSize} />
-      )}
+      {direction !== undefined && <Arrow color={color} direction={direction} size={arrowSize} />}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   itemContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  itemLabel: { fontSize: 14, fontWeight: "bold", marginRight: 2 },
+  itemLabel: { fontSize: 14, fontWeight: 'bold', marginRight: 2 },
 });

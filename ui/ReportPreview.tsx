@@ -1,9 +1,9 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet } from 'react-native';
 
-import { Text } from "../ui/Text";
-import colors from "../theme/colors";
-import { ReportMetric } from "./ReportMetric";
-import Rating from "./Rating";
+import Rating from './Rating';
+import { ReportMetric } from './ReportMetric';
+import colors from '../theme/colors';
+import { Text } from '../ui/Text';
 
 export function ReportPreview() {
   return (
@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   wrapper: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   reportMetrics: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
 });

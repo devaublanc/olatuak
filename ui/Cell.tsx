@@ -1,5 +1,6 @@
-import { StyleProp, View, ViewStyle } from "react-native";
-import colors from "../theme/colors";
+import { StyleProp, View, ViewStyle } from 'react-native';
+
+import colors from '../theme/colors';
 
 export function Cell({
   children,
@@ -13,20 +14,19 @@ export function Cell({
       style={[
         {
           paddingHorizontal: 4,
-          alignItems: "center",
+          alignItems: 'center',
           paddingVertical: 4,
-          alignSelf: "stretch",
+          alignSelf: 'stretch',
           borderWidth: 0.5,
           height: 32,
           width: 55,
-          borderStyle: "solid",
-          flexDirection: "row",
-          justifyContent: "center",
+          borderStyle: 'solid',
+          flexDirection: 'row',
+          justifyContent: 'center',
           borderColor: colors.grey[500],
         },
         style,
-      ]}
-    >
+      ]}>
       {children}
     </View>
   );

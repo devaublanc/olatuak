@@ -1,12 +1,10 @@
-import { Dimensions, View, StyleSheet, ScrollView } from "react-native";
-import { Text } from "../ui/Text";
+import dayjs from 'dayjs';
+import React from 'react';
+import { Dimensions, ScrollView } from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
 
-import React, { useState, useEffect } from "react";
-import { LineChart } from "react-native-chart-kit";
-import colors from "../theme/colors";
-import { useTide } from "../hooks/useTide";
-import { Tides } from "../data/tide";
-import dayjs from "dayjs";
+import { Tides } from '../data/tide';
+import colors from '../theme/colors';
 
 export const TideChart = ({ tides }: { tides: Tides }) => {
   return (
@@ -15,27 +13,26 @@ export const TideChart = ({ tides }: { tides: Tides }) => {
       showsHorizontalScrollIndicator={false}
       bounces={false}
       style={{
-        width: Dimensions.get("screen").width,
-        backgroundColor: "red",
+        width: Dimensions.get('screen').width,
+        backgroundColor: 'red',
         marginBottom: 16,
-      }}
-    >
+      }}>
       <LineChart
         data={{
-          labels: tides.map(tide => dayjs(tide.date).format("HH[h]")),
+          labels: tides.map((tide) => dayjs(tide.date).format('HH[h]')),
           datasets: [
             {
-              data: tides.map(tide => tide.value),
+              data: tides.map((tide) => tide.value),
             },
           ],
         }}
-        width={Dimensions.get("window").width * 2} // from react-native
+        width={Dimensions.get('window').width * 2} // from react-native
         yLabelsOffset={20}
-        formatYLabel={value => `${value}m`}
+        formatYLabel={(value) => `${value}m`}
         yAxisInterval={3}
         height={160}
         chartConfig={{
-          backgroundColor: "#F0F",
+          backgroundColor: '#F0F',
           backgroundGradientFrom: colors.blue[500],
           backgroundGradientTo: colors.blue[500],
           labelColor: () => colors.grey[500],

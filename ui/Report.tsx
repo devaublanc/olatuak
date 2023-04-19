@@ -1,7 +1,8 @@
-import { FlatList, View, StyleSheet } from "react-native";
-import { Report as ReportType } from "../data/report";
-import { ReportItem } from "./ReportItem";
-import { ReportHeader } from "./ReportHeader";
+import { FlatList, View, StyleSheet } from 'react-native';
+
+import { ReportHeader } from './ReportHeader';
+import { ReportItem } from './ReportItem';
+import { Report as ReportType } from '../data/report';
 
 export type ReportProps = {
   report: ReportType;
@@ -16,7 +17,7 @@ export function Report({ report }: ReportProps) {
         bounces={false}
         data={report}
         renderItem={({ item }) => <ReportItem {...item} />}
-        keyExtractor={item => item.day + item.hour + item.waveHeight.toString()}
+        keyExtractor={(item) => item.day + item.hour + item.waveHeight.toString()}
         stickyHeaderIndices={[0]}
       />
     </View>
@@ -25,9 +26,9 @@ export function Report({ report }: ReportProps) {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "row",
+    display: 'flex',
+    flexDirection: 'row',
     marginTop: 16,
-    alignItems: "flex-end",
+    alignItems: 'flex-end',
   },
 });

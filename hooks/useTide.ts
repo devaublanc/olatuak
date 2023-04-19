@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Report, getReport } from "../data/report";
-import { Tide, Tides, getTide } from "../data/tide";
+import { useEffect, useState } from 'react';
+
+import { Tides, getTide } from '../data/tide';
 
 export function useTide() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -10,15 +10,12 @@ export function useTide() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getTide(
-          "2023-04-03 22:00:00",
-          "2023-04-04 23:59:00"
-        );
+        const response = await getTide('2023-04-03 22:00:00', '2023-04-04 23:59:00');
         setData(response);
         setLoading(false);
       } catch (error) {
         console.error(error);
-        setError("Failed to retrieve report.");
+        setError('Failed to retrieve report.');
         setLoading(false);
       }
     };

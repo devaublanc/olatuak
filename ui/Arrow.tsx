@@ -1,4 +1,4 @@
-import FondationIcon from "@expo/vector-icons/Foundation";
+import FondationIcon from '@expo/vector-icons/Foundation';
 
 export function Arrow({
   direction,

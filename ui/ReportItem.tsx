@@ -1,8 +1,9 @@
-import { View, StyleSheet } from "react-native";
-import colors from "../theme/colors";
-import { Text } from "./Text";
-import { Cell } from "./Cell";
-import { ReportMetric } from "./ReportMetric";
+import { View, StyleSheet } from 'react-native';
+
+import { Cell } from './Cell';
+import { ReportMetric } from './ReportMetric';
+import { Text } from './Text';
+import colors from '../theme/colors';
 export type ReportItemProps = {
   day: string;
   hour: string;
@@ -67,14 +68,13 @@ export function ReportItem({
         style={{
           paddingVertical: 0,
           paddingHorizontal: 0,
-          alignItems: "flex-end",
-        }}
-      >
+          alignItems: 'flex-end',
+        }}>
         <View
           style={{
             backgroundColor: colors.primary[500],
-            width: "100%",
-            height: "50%",
+            width: '100%',
+            height: '50%',
           }}
         />
       </Cell>
@@ -84,15 +84,15 @@ export function ReportItem({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
+    alignItems: 'center',
   },
   dateWrapper: {
-    flexDirection: "column",
+    flexDirection: 'column',
     width: 45,
   },
   date: {
     fontSize: 12,
-    textAlign: "center",
-    fontWeight: "bold",
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });

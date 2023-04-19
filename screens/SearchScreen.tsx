@@ -1,13 +1,8 @@
-import { Dimensions, View, StyleSheet, ScrollView } from "react-native";
-import { Text } from "../ui/Text";
+import React from 'react';
+import { View } from 'react-native';
 
-import React, { useState, useEffect } from "react";
-import { LineChart } from "react-native-chart-kit";
-import colors from "../theme/colors";
-import { useTide } from "../hooks/useTide";
-import { Tides } from "../data/tide";
-import dayjs from "dayjs";
-import { TideChart } from "../ui/Tide";
+import { useTide } from '../hooks/useTide';
+import { TideChart } from '../ui/Tide';
 
 export function SearchScreen() {
   const { data } = useTide();

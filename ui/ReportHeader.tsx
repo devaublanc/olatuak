@@ -1,13 +1,14 @@
-import { View, StyleSheet } from "react-native";
-import { Cell } from "./Cell";
-import { Text } from "./Text";
+import { View, StyleSheet } from 'react-native';
 
-const labels = ["Vagues", "Période", "Vent", "Marée"];
+import { Cell } from './Cell';
+import { Text } from './Text';
 
-export function ReportHeader({}) {
+const labels = ['Vagues', 'Période', 'Vent', 'Marée'];
+
+export function ReportHeader() {
   return (
     <View>
-      {labels.map(label => (
+      {labels.map((label) => (
         <Cell style={styles.cell} key={label}>
           <Text style={styles.label}>{label}</Text>
         </Cell>
@@ -18,10 +19,10 @@ export function ReportHeader({}) {
 
 const styles = StyleSheet.create({
   cell: {
-    justifyContent: "flex-start",
+    justifyContent: 'flex-start',
   },
   label: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     fontSize: 12,
     letterSpacing: 0.2,
   },

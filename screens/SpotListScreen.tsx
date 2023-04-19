@@ -1,25 +1,19 @@
-import { spots } from "../data/spot";
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useCallback } from 'react';
 
-import { SpotGrid } from "../ui/SpotGrid";
+import { spots } from '../data/spot';
+import { useTide } from '../hooks/useTide';
+import { SpotStackParamList } from '../navigation/RootStack';
+import { ReportPreview } from '../ui/ReportPreview';
+import { SpotGrid } from '../ui/SpotGrid';
+import { TideChart } from '../ui/Tide';
 
-import { useCallback } from "react";
-
-import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { SpotStackParamList } from "../navigation/RootStack";
-import { useTide } from "../hooks/useTide";
-import { TideChart } from "../ui/Tide";
-
-import { ReportPreview } from "../ui/ReportPreview";
-
-export type SpotListScreenProps = NativeStackScreenProps<
-  SpotStackParamList,
-  "SpotList"
->;
+export type SpotListScreenProps = NativeStackScreenProps<SpotStackParamList, 'SpotList'>;
 
 export function SpotListScreen({ navigation }: SpotListScreenProps) {
   const { data } = useTide();
   const onPressItem = useCallback((spotId: string) => {
-    navigation.navigate("SpotDetail", { spotId: spotId });
+    navigation.navigate('SpotDetail', { spotId });
   }, []);
 
   return (

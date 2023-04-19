@@ -1,19 +1,19 @@
-import * as React from "react";
-
-import { NavigationContainer } from "@react-navigation/native";
-import AntIcon from "@expo/vector-icons/AntDesign";
-import {
-  NativeStackNavigationOptions,
-  createNativeStackNavigator,
-} from "@react-navigation/native-stack";
-import { SpotListScreen } from "../screens/SpotListScreen";
-import { SpotDetailScreen } from "../screens/SpotDetailScreen";
+import AntIcon from '@expo/vector-icons/AntDesign';
 import {
   BottomTabNavigationOptions,
   createBottomTabNavigator,
-} from "@react-navigation/bottom-tabs";
-import colors from "../theme/colors";
-import { SearchScreen } from "../screens/SearchScreen";
+} from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import {
+  NativeStackNavigationOptions,
+  createNativeStackNavigator,
+} from '@react-navigation/native-stack';
+import * as React from 'react';
+
+import { SearchScreen } from '../screens/SearchScreen';
+import { SpotDetailScreen } from '../screens/SpotDetailScreen';
+import { SpotListScreen } from '../screens/SpotListScreen';
+import colors from '../theme/colors';
 
 export type SpotStackParamList = {
   SpotList: undefined;
@@ -65,9 +65,9 @@ export function SpotStack() {
         name="SpotList"
         component={SpotListScreen}
         options={{
-          title: "Olatuak",
+          title: 'Olatuak',
           headerTitleStyle: {
-            fontFamily: "PermanentMarker-Regular",
+            fontFamily: 'PermanentMarker-Regular',
             fontSize: 25,
             color: colors.white[500],
           },
@@ -77,7 +77,7 @@ export function SpotStack() {
         name="SpotDetail"
         component={SpotDetailScreen}
         options={{
-          presentation: "modal",
+          presentation: 'modal',
         }}
       />
     </SpotStackNavigator.Navigator>
@@ -86,9 +86,7 @@ export function SpotStack() {
 
 export function SearchStack() {
   return (
-    <SearchStackNavigator.Navigator
-      screenOptions={defaultStackNavigationOptions}
-    >
+    <SearchStackNavigator.Navigator screenOptions={defaultStackNavigationOptions}>
       <SearchStackNavigator.Screen name="Search" component={SearchScreen} />
     </SearchStackNavigator.Navigator>
   );
@@ -102,14 +100,14 @@ export function RootStack() {
           name="SpotStack"
           component={SpotStack}
           options={{
-            tabBarIcon: icon => <AntIcon name="home" {...icon} />,
+            tabBarIcon: (icon) => <AntIcon name="home" {...icon} />,
           }}
         />
         <RootTabNavigator.Screen
           name="SearchStack"
           component={SearchStack}
           options={{
-            tabBarIcon: icon => <AntIcon name="search1" {...icon} />,
+            tabBarIcon: (icon) => <AntIcon name="search1" {...icon} />,
           }}
         />
       </RootTabNavigator.Navigator>

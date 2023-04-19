@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import dayjs from 'dayjs';
 
 type MarineApiResponse = {
   hourly: {
@@ -64,22 +64,17 @@ export type ReportItem = {
 export type Report = ReportItem[];
 
 const MARINE_API_URL =
-  "https://marine-api.open-meteo.com/v1/marine?latitude=43.49&longitude=-1.52&hourly=wave_height&hourly=wave_period&hourly=wave_direction&hourly=wind_wave_height&hourly=wind_wave_direction&hourly=wind_wave_period&hourly=wind_wave_peak_period&hourly=swell_wave_period&hourly=swell_wave_height&hourly=swell_wave_peak_period&hourly=swell_wave_direction";
+  'https://marine-api.open-meteo.com/v1/marine?latitude=43.49&longitude=-1.52&hourly=wave_height&hourly=wave_period&hourly=wave_direction&hourly=wind_wave_height&hourly=wind_wave_direction&hourly=wind_wave_period&hourly=wind_wave_peak_period&hourly=swell_wave_period&hourly=swell_wave_height&hourly=swell_wave_peak_period&hourly=swell_wave_direction';
 const FORCAST_API_URL =
-  "https://api.open-meteo.com/v1/forecast?latitude=43.49&longitude=-1.52&hourly=windspeed_10m&hourly=windspeed_80m&hourly=windspeed_120m&hourly=windspeed_180m&hourly=winddirection_10m&hourly=winddirection_80m&hourly=winddirection_120m&hourly=winddirection_180m";
+  'https://api.open-meteo.com/v1/forecast?latitude=43.49&longitude=-1.52&hourly=windspeed_10m&hourly=windspeed_80m&hourly=windspeed_120m&hourly=windspeed_180m&hourly=winddirection_10m&hourly=winddirection_80m&hourly=winddirection_120m&hourly=winddirection_180m';
 
 export async function getReport(): Promise<Report> {
   const [marineResponse, forecastResponse] = await Promise.all([
-    fetch(MARINE_API_URL).then(response =>
-      response.json()
-    ) as Promise<MarineApiResponse>,
-    fetch(FORCAST_API_URL).then(response =>
-      response.json()
-    ) as Promise<ForecastApiResponse>,
+    fetch(MARINE_API_URL).then((response) => response.json()) as Promise<MarineApiResponse>,
+    fetch(FORCAST_API_URL).then((response) => response.json()) as Promise<ForecastApiResponse>,
   ]);
 
-  const { time, wave_height, wave_direction, wave_period } =
-    marineResponse.hourly;
+  const { time, wave_height, wave_direction, wave_period } = marineResponse.hourly;
   const {
     windspeed_10m,
     windspeed_80m,
@@ -93,8 +88,8 @@ export async function getReport(): Promise<Report> {
 
   const report: Report = time.map((timestamp, index) => {
     const date = dayjs(timestamp);
-    const day = date.format("ddd D");
-    const hour = date.format("H[h]");
+    const day = date.format('ddd D');
+    const hour = date.format('H[h]');
 
     return {
       time: timestamp,

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import { Report, getReport } from "../data/report";
+import { useEffect, useState } from 'react';
+
+import { Report, getReport } from '../data/report';
 
 export function useReport() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -14,7 +15,7 @@ export function useReport() {
         setLoading(false);
       } catch (error) {
         console.error(error);
-        setError("Failed to retrieve report.");
+        setError('Failed to retrieve report.');
         setLoading(false);
       }
     };

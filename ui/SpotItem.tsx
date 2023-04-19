@@ -1,9 +1,9 @@
-import { Image } from "expo-image";
+import { Image } from 'expo-image';
+import { TouchableOpacity } from 'react-native';
 
-import { TouchableOpacity, View } from "react-native";
-import { getSpotThumbnail, Spot } from "../data/spot";
-import colors from "../theme/colors";
-import { Text } from "./Text";
+import { Text } from './Text';
+import { getSpotThumbnail, Spot } from '../data/spot';
+import colors from '../theme/colors';
 
 export type SpotThumbnailProps = {
   spot: Spot;
@@ -16,7 +16,7 @@ export function SpotItem({ spot, width, height, onPress }: SpotThumbnailProps) {
   return (
     <TouchableOpacity onPress={onPress} style={{ padding: 8 }}>
       <Image
-        cachePolicy={"none"}
+        cachePolicy={'none'}
         source={{
           uri: getSpotThumbnail(spot.id),
         }}
@@ -32,9 +32,8 @@ export function SpotItem({ spot, width, height, onPress }: SpotThumbnailProps) {
         style={{
           fontSize: 10,
           color: colors.white[500],
-          fontWeight: "bold",
-        }}
-      >
+          fontWeight: 'bold',
+        }}>
         {spot.name}
       </Text>
       <Text style={{ color: colors.grey[500], fontSize: 10 }}>{spot.city}</Text>
