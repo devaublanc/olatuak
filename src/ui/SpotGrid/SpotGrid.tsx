@@ -25,12 +25,14 @@ export function SpotGrid({ spots, onPressItem, header }: SpotGridProps) {
         height={itemHeight}
         width={itemWidth}
         spot={item}
+        testID={`spot-item-${item.id}`}
       />
     );
   }, []);
 
   return (
     <FlatList
+      testID="spot-grid"
       ListHeaderComponent={header}
       style={{ padding: paddingWrapper }}
       data={spots}
