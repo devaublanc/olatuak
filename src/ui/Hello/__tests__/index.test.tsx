@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react-native';
 import React from 'react';
 
-import { HelloWorld } from './Hello';
-import { render } from '../../utils/test-utils';
+import { render } from '../../../utils/test-utils';
+import { HelloWorld } from '../Hello';
 
 describe('HelloWorld', () => {
   it('should display username when "Print Username" button is clicked', async () => {

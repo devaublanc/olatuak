@@ -15,10 +15,14 @@ function Rating({ value, size = 16, color = 'white' }: Props) {
   return (
     <View style={styles.container}>
       {[...Array(filledStars)].map((_, index) => (
-        <FontAwesome key={`filled-star-${index}`} name="star" size={size} color={color} />
+        <View testID="filled-star" key={`filled-star-${index}`}>
+          <FontAwesome name="star" size={size} color={color} />
+        </View>
       ))}
       {[...Array(emptyStars)].map((_, index) => (
-        <FontAwesome key={`empty-star-${index}`} name="star-o" size={size} color={color} />
+        <View testID="empty-star" key={`empty-star-${index}`}>
+          <FontAwesome name="star-o" size={size} color={color} />
+        </View>
       ))}
     </View>
   );
