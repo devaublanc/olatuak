@@ -7,7 +7,14 @@ import { SafeAreaView } from 'react-native';
 import { RootStack } from './src/navigation/RootStack';
 import colors from './src/theme/colors';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnMount: false,
+      cacheTime: 15 * 60 * 1000, // set cacheTime to 10 minutes
+    },
+  },
+});
 
 function App() {
   const [fontsLoaded] = useFonts({

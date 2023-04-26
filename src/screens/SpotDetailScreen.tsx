@@ -3,18 +3,20 @@ import { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import { Player } from '../components/Player/Player';
-import { useReport } from '../hooks/useReport';
 import { SpotStackParamList } from '../navigation/RootStack';
+import { useReport } from '../services/report/hooks';
 import { Report } from '../ui/Report/Report';
 import { getSpotById } from '../utils/spot';
 
 export type SpotDetailScreenProps = NativeStackScreenProps<SpotStackParamList, 'SpotDetail'>;
 export function SpotDetailScreen({ navigation, route }: SpotDetailScreenProps) {
-  const { data, loading } = useReport();
+  const { data, isLoading, isStale, isFetching } = useReport(route.params.spotId);
   useEffect(() => {
     const { name } = getSpotById(route.params.spotId);
     navigation.setOptions({ title: name });
   }, [route.params.spotId]);
+
+  console.log({ isStale, isFetching });
 
   return (
     <View
@@ -23,8 +25,8 @@ export function SpotDetailScreen({ navigation, route }: SpotDetailScreenProps) {
       }}>
       <Player />
       <View style={{ flex: 1 }}>
-        {loading && <ActivityIndicator />}
-        {data !== null && <Report report={data} />}
+        {isLoading && <ActivityIndicator />}
+        {data !== undefined && <Report report={data} />}
       </View>
     </View>
   );

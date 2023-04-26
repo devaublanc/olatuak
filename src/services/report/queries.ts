@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { getForecastEndpoint, getMarineEndpoint } from './helpers';
 import { ForecastApiResponse, MarineApiResponse, Report } from './types';
 
-export async function getReport(): Promise<Report> {
+export async function getReport(spotId: string): Promise<Report> {
   const [marineResponse, forecastResponse] = await Promise.all([
     fetch(
       getMarineEndpoint({
