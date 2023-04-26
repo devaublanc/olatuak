@@ -17,9 +17,7 @@ export function ReportPreview() {
             unit="m"
             color={colors.primary[500]}
             direction={180}
-            style={{
-              marginLeft: 8,
-            }}
+            style={styles.metric}
           />
 
           <ReportMetric
@@ -27,9 +25,7 @@ export function ReportPreview() {
             unit="km/h"
             color={colors.secondary[500]}
             direction={100}
-            style={{
-              marginLeft: 8,
-            }}
+            style={styles.metric}
           />
         </View>
         <View>
@@ -56,5 +52,8 @@ const styles = StyleSheet.create({
   },
   reportMetrics: {
     flexDirection: 'row',
+  },
+  metric: {
+    marginLeft: 8,
   },
 });

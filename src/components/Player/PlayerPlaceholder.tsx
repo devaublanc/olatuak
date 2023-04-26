@@ -1,4 +1,4 @@
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, View, StyleSheet } from 'react-native';
 
 import colors from '../../theme/colors';
 
@@ -9,16 +9,24 @@ export type VideoPlaceholderProps = {
 export function PlayerPlaceholder({ width, height }: VideoPlaceholderProps) {
   return (
     <View
-      style={{
-        width,
-        height,
-        backgroundColor: colors.blue[400],
-        justifyContent: 'center',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-      }}>
+      style={[
+        styles.container,
+        {
+          width,
+          height,
+        },
+      ]}>
       <ActivityIndicator size={'large'} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.blue[400],
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+  },
+});
