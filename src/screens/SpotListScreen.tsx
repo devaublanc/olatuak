@@ -1,7 +1,7 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useCallback } from 'react';
 
-import { spots } from '../data/spot';
+import { spots } from '../config/spot';
 import { useTide } from '../hooks/useTide';
 import { SpotStackParamList } from '../navigation/RootStack';
 import { ReportPreview } from '../ui/ReportPreview/ReportPreview';

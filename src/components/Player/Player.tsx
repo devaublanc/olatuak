@@ -10,8 +10,8 @@ import { useCallback, useRef, useState } from 'react';
 import { Dimensions, TouchableOpacity } from 'react-native';
 
 import { PlayerPlaceholder } from './PlayerPlaceholder';
-import { getSpotM3u8 } from '../../data/spot';
 import { SpotDetailScreenProps } from '../../screens/SpotDetailScreen';
+import { getSpotById } from '../../utils/spot';
 
 const screenWidth = Dimensions.get('window').width;
 const videoWidth = screenWidth;
@@ -48,7 +48,7 @@ export function Player() {
             height: videoHeight,
           }}
           source={{
-            uri: getSpotM3u8(spotId as string),
+            uri: getSpotById(spotId).metadata?.m3u8 as string,
           }}
           shouldPlay
           useNativeControls={false}

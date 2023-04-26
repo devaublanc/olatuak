@@ -1,4 +1,4 @@
-import { Spot } from '../../../data/spot';
+import { Spot } from '../../../config/spot';
 import { fireEvent, render } from '../../../utils/test-utils';
 import { SpotItem } from '../SpotItem';
 

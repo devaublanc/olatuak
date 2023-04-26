@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 
 import { Player } from '../components/Player/Player';
-import { getSpotById } from '../data/spot';
 import { useReport } from '../hooks/useReport';
 import { SpotStackParamList } from '../navigation/RootStack';
 import { Report } from '../ui/Report/Report';
+import { getSpotById } from '../utils/spot';
 
 export type SpotDetailScreenProps = NativeStackScreenProps<SpotStackParamList, 'SpotDetail'>;
 export function SpotDetailScreen({ navigation, route }: SpotDetailScreenProps) {

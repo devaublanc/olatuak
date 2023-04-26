@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Report, getReport } from '../data/report';
+import { getReport } from '../services/report/queries';
+import { Report } from '../services/report/types';
 
 export function useReport() {
   const [loading, setLoading] = useState<boolean>(true);

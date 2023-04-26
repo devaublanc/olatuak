@@ -2,7 +2,7 @@ import { FlatList, View, StyleSheet } from 'react-native';
 
 import { ReportHeader } from './ReportHeader';
 import { ReportItem } from './ReportItem';
-import { Report as ReportType } from '../../data/report';
+import { Report as ReportType } from '../../services/report/types';
 
 export type ReportProps = {
   report: ReportType;

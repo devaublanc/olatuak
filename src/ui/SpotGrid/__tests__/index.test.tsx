@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react-native';
 import React from 'react';
 
-import { Spot } from '../../../data/spot';
+import { Spot } from '../../../config/spot';
 import { render } from '../../../utils/test-utils';
 import { SpotGrid } from '../SpotGrid';
 

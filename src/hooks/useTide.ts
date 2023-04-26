@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Tides, getTide } from '../data/tide';
+import { getTide } from '../services/tide/queries';
+import { Tides } from '../services/tide/types';
 
 export function useTide() {
   const [loading, setLoading] = useState<boolean>(true);

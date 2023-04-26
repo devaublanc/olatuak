@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 
-import { getSpotThumbnail, Spot } from '../../data/spot';
+import { Spot } from '../../config/spot';
 import colors from '../../theme/colors';
 import { Text } from '../Text/Text';
 
@@ -20,7 +20,7 @@ export function SpotItem({ spot, width, height, onPress, testID }: SpotThumbnail
         testID="item-picture"
         cachePolicy={'none'}
         source={{
-          uri: getSpotThumbnail(spot.id),
+          uri: spot.metadata?.thumbnail,
         }}
         style={[
           {

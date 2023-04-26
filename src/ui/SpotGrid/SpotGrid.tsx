@@ -1,7 +1,7 @@
 import { ReactElement, useCallback } from 'react';
 import { FlatList, Dimensions } from 'react-native';
 
-import { Spot } from '../../data/spot';
+import { Spot } from '../../config/spot';
 import { SpotItem } from '../SpotItem/SpotItem';
 
 export type SpotGridProps = {
