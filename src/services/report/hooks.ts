@@ -11,7 +11,6 @@ export function useReport(spotId: string) {
   const result = useQuery<Report, Error>({
     queryKey: ['report', spotId],
     queryFn: () => getReport(spotId),
-    cacheTime: Infinity,
   });
   return result;
 }

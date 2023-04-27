@@ -40,7 +40,9 @@ export function Player() {
     <>
       {!isPlaying && <PlayerPlaceholder width={videoWidth} height={videoHeight} />}
 
-      <TouchableOpacity onPress={() => video.current?.presentFullscreenPlayer()}>
+      <TouchableOpacity
+        style={{ backgroundColor: 'black' }}
+        onPress={() => video.current?.presentFullscreenPlayer()}>
         <ExpoVideo
           ref={video}
           style={{
