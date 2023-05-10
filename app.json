@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#2a2c37"
-      }
+      },
+      "package": "com.bdevaublanc.olatuak"
     },
     "web": {
       "favicon": "./assets/favicon.png"
