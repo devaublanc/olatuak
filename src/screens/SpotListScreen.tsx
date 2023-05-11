@@ -1,4 +1,5 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import Constants from 'expo-constants';
 import { useCallback } from 'react';
 import { Text } from 'react-native';
 
@@ -14,10 +15,10 @@ export function SpotListScreen({ navigation }: SpotListScreenProps) {
   const onPressItem = useCallback((spotId: string) => {
     navigation.navigate('SpotDetail', { spotId });
   }, []);
-
+  console.log('ENV', Env);
   return (
     <>
-      <Text>APP_VARIANT: {Env.APP_VARIANT}</Text>
+      <Text>APP_VARIANT : {JSON.stringify(Constants.expoConfig?.extra)}</Text>
       <ReportPreview />
       <SpotGrid
         onPressItem={onPressItem}

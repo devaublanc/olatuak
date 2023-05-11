@@ -9,6 +9,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   scheme: 'olatuak',
   version: '1.0.0',
   orientation: 'portrait',
+
   icon: IS_PRODUCTION ? './assets/icon.png' : './assets/icon-dev.png',
   userInterfaceStyle: 'light',
   splash: {
@@ -32,7 +33,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     favicon: './assets/favicon.png',
   },
   extra: {
-    API_URL: process.env.API_URL,
+    appVariant: process.env.APP_VARIANT,
     eas: {
       projectId: 'c4c58d88-f165-44f8-9ee0-0cb5f0666486',
     },
