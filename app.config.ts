@@ -48,9 +48,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
 const getAppName = () => {
   switch (process.env.APP_VARIANT) {
     case 'development':
-      return 'Olatuak (Dev)';
-    case 'preview':
-      return 'Olatuak (Preview)';
+      return 'Olatuak (dev)';
+    case 'staging':
+      return 'Olatuak (staging)';
     default:
       return 'Olatuak';
   }
@@ -60,8 +60,8 @@ const getBundleName = () => {
   switch (process.env.APP_VARIANT) {
     case 'development':
       return 'com.bdevaublanc.olatuak.dev';
-    case 'preview':
-      return 'com.bdevaublanc.olatuak.preview';
+    case 'staging':
+      return 'com.bdevaublanc.olatuak.staging';
     default:
       return 'com.bdevaublanc.olatuak';
   }

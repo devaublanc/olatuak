@@ -14,15 +14,15 @@
       },
       "channel": "development"
     },
-    "preview": {
+    "staging": {
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium"
       },
       "env": {
-        "APP_VARIANT": "preview"
+        "APP_VARIANT": "staging"
       },
-      "channel": "preview"
+      "channel": "staging"
     },
     "production": {
       "ios": {
