@@ -17,6 +17,7 @@ export function SpotListScreen({ navigation }: SpotListScreenProps) {
   return (
     <>
       <ReportPreview />
+      <Text>TESTTESTETETADADASDASDADASDSAD</Text>
       <SpotGrid
         onPressItem={onPressItem}
         spots={spots}
