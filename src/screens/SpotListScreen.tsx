@@ -1,6 +1,5 @@
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useCallback } from 'react';
-import { Text } from 'react-native';
 
 import { spots } from '../config/spot';
 import { SpotStackParamList } from '../navigation/RootStack';
@@ -17,7 +16,6 @@ export function SpotListScreen({ navigation }: SpotListScreenProps) {
   return (
     <>
       <ReportPreview />
-      <Text>TESTTESTETETADADASDASDADASDSAD</Text>
       <SpotGrid
         onPressItem={onPressItem}
         spots={spots}
