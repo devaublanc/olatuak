@@ -12,7 +12,6 @@ export function SpotListScreen({ navigation }: SpotListScreenProps) {
   const onPressItem = useCallback((spotId: string) => {
     navigation.navigate('SpotDetail', { spotId });
   }, []);
-
   return (
     <>
       <ReportPreview />

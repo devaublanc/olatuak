@@ -9,18 +9,27 @@
       "ios": {
         "resourceClass": "m-medium"
       },
+      "env": {
+        "APP_VARIANT": "development"
+      },
       "channel": "development"
     },
-    "preview": {
+    "staging": {
       "distribution": "internal",
       "ios": {
         "resourceClass": "m-medium"
       },
-      "channel": "preview"
+      "env": {
+        "APP_VARIANT": "staging"
+      },
+      "channel": "staging"
     },
     "production": {
       "ios": {
         "resourceClass": "m-medium"
+      },
+      "env": {
+        "APP_VARIANT": "production"
       },
       "channel": "production"
     }

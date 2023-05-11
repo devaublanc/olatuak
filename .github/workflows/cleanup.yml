@@ -1,0 +1,16 @@
+name: Cleanup EAS channel/branch on merge to staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  merge-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Channel
+        run: eas channel:delete ${{ github.head_ref }} --non-interactive
+
+      - name: Delete Branch
+        run: eas branch:delete ${{ github.head_ref }} --non-interactive
