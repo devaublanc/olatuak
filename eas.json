@@ -9,6 +9,9 @@
       "ios": {
         "resourceClass": "m-medium"
       },
+      "env": {
+        "APP_VARIANT": "development"
+      },
       "channel": "development"
     },
     "preview": {
@@ -16,11 +19,17 @@
       "ios": {
         "resourceClass": "m-medium"
       },
+      "env": {
+        "APP_VARIANT": "preview"
+      },
       "channel": "preview"
     },
     "production": {
       "ios": {
         "resourceClass": "m-medium"
+      },
+      "env": {
+        "APP_VARIANT": "production"
       },
       "channel": "production"
     }
