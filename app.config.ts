@@ -1,16 +1,14 @@
 import { ExpoConfig, ConfigContext } from 'expo/config';
 
-const IS_PRODUCTION = process.env.APP_VARIANT === 'production';
-
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: getAppName(),
   slug: 'olatuak',
   scheme: 'olatuak',
-  version: '1.0.0',
+  version: '1.0.2',
   orientation: 'portrait',
 
-  icon: IS_PRODUCTION ? './assets/icon.png' : './assets/icon-dev.png',
+  icon: getAppIcon(),
   userInterfaceStyle: 'light',
   splash: {
     image: './assets/splash.png',
@@ -19,10 +17,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   assetBundlePatterns: ['**/*'],
   ios: {
+    buildNumber: '2',
     supportsTablet: true,
     bundleIdentifier: getBundleName(),
   },
   android: {
+    versionCode: 2,
     adaptiveIcon: {
       foregroundImage: './assets/adaptive-icon.png',
       backgroundColor: '#2a2c37',
@@ -39,7 +39,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
   },
   runtimeVersion: {
-    policy: 'sdkVersion',
+    policy: 'appVersion',
   },
   updates: {
     url: 'https://u.expo.dev/c4c58d88-f165-44f8-9ee0-0cb5f0666486',
@@ -54,6 +54,17 @@ const getAppName = () => {
       return 'Olatuak (staging)';
     default:
       return 'Olatuak';
+  }
+};
+
+const getAppIcon = () => {
+  switch (process.env.APP_VARIANT) {
+    case 'development':
+      return './assets/icon-dev.png';
+    case 'staging':
+      return './assets/icon-staging.png';
+    default:
+      return './assets/icon.png';
   }
 };
 
