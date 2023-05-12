@@ -3,10 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize]
 jobs:
-  call-checks:
-    uses: ./.github/workflows/checks.yml
   preview:
-    needs: call-checks
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write # Allow comments on PRs
