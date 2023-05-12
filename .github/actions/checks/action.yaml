@@ -1,0 +1,14 @@
+name: Checks
+description: 'Run all the necessary checks: lint, types, unit tests'
+
+runs:
+  using: composite
+  steps:
+    - run: yarn lint
+      shell: bash
+
+    - run: yarn tsc
+      shell: bash
+
+    - run: yarn test
+      shell: bash
