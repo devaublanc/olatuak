@@ -1,9 +1,8 @@
 name: Cleanup EAS channel/branch on merge to staging
 
 on:
-  push:
-    branches:
-      - staging
+  pull_request:
+    types: [closed]
 
 jobs:
   merge-job:
@@ -13,4 +12,6 @@ jobs:
         run: eas channel:delete ${{ github.head_ref }} --non-interactive
 
       - name: Delete Branch
-        run: eas branch:delete ${{ github.head_ref }} --non-interactive
+        run: |
+          eas branch:delete ${{ github.head_ref }} --non-interactive
+          echo "Deleted branch ${{ github.head_ref }}"
