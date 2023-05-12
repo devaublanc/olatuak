@@ -1,11 +1,11 @@
-name: Cleanup EAS channel/branch on merge to staging
+name: Cleanup EAS channel/branch
 
 on:
   pull_request:
     types: [closed]
 
 jobs:
-  merge-job:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
       - name: 🏗 Setup repo
