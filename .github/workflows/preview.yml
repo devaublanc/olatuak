@@ -3,6 +3,8 @@ on:
   pull_request:
     types: [opened, synchronize]
 jobs:
+  call-checks:
+    uses: ./.github/workflows/checks.yml
   preview:
     runs-on: ubuntu-latest
     permissions:
