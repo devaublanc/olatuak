@@ -1,3 +1,4 @@
+name: Generate app preview
 on:
   pull_request:
     types: [opened, synchronize]
