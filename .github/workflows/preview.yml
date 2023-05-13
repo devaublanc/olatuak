@@ -1,6 +1,9 @@
+name: Generate app preview
+
 on:
   pull_request:
     types: [opened, synchronize]
+
 jobs:
   preview:
     runs-on: ubuntu-latest

@@ -1,16 +1,32 @@
-name: Cleanup EAS channel/branch on merge to staging
+name: Cleanup EAS channel/branch
 
 on:
-  push:
-    branches:
-      - staging
+  pull_request:
+    types: [closed]
 
 jobs:
-  merge-job:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
-      - name: Delete Channel
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: 🏗 Setup EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 🧹 Delete Channel
         run: eas channel:delete ${{ github.head_ref }} --non-interactive
 
-      - name: Delete Branch
-        run: eas branch:delete ${{ github.head_ref }} --non-interactive
+      - name: 🧹 Delete Branch
+        run: |
+          eas branch:delete ${{ github.head_ref }} --non-interactive
+          echo "Deleted branch ${{ github.head_ref }}"

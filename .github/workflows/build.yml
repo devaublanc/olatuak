@@ -1,10 +1,14 @@
-name: Publish app update
+name: Build
 
-on: push
+on:
+  push:
+    branches:
+      - staging
+      - production
 
 jobs:
   update:
-    name: EAS Update
+    name: Build staging
     runs-on: ubuntu-latest
     steps:
       - name: Check for EXPO_TOKEN
@@ -23,14 +27,19 @@ jobs:
           node-version: 18.x
           cache: yarn
 
+      - name: 📦 Install dependencies
+        run: yarn install
+
       - name: 🏗 Setup EAS
         uses: expo/expo-github-action@v8
         with:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: 📦 Install dependencies
-        run: yarn install
-
-      - name: 🚀 Publish update
-        run: eas update --auto --non-interactive
+      - name: 🚀 Build app
+        run: |
+          if [ ${{ github.ref }} = 'refs/heads/staging' ]; then
+            eas build --profile staging --platform all --non-interactive
+          elif [ ${{ github.ref }} = 'refs/heads/production' ]; then
+            eas build --profile production --platform all --non-interactive
+          fi
