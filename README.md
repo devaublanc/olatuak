@@ -67,4 +67,4 @@ Fork this repository.
 Create a new branch for your feature or bugfix: `git checkout -b my-new-feature`
 Make your changes and commit them: `git commit -am 'Add some feature'`
 Push your branch to your fork: `git push origin my-new-feature`
-Create a new Pull Request.
+Create a new Pull Request...
