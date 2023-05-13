@@ -23,10 +23,13 @@ jobs:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: 🧹 Delete Channel
-        run: eas channel:delete ${{ github.head_ref }} --non-interactive
-
-      - name: 🧹 Delete Branch
+      - name: 🧹 Delete Channel and Branch
         run: |
-          eas branch:delete ${{ github.head_ref }} --non-interactive
-          echo "Deleted branch ${{ github.head_ref }}"
+          if [[ ${{ github.head_ref }} != "staging" && ${{ github.head_ref }} != "production"  ]]; then
+            eas channel:delete ${{ github.head_ref }} --non-interactive
+            eas branch:delete ${{ github.head_ref }} --non-interactive
+            echo "Deleted channel and branch ${{ github.head_ref }}"
+          else
+            echo "Nothing to cleanup"
+            exit 0
+          fi
